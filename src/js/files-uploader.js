@@ -10,7 +10,7 @@ var FU_CONFIG = {
     "IMAGE_MIN_WIDTH": 0,
     "IMAGE_MAX_HEIGHT": 0,
     "IMAGE_MIN_HEIGHT": 0,
-    "IMAGES_PATH": "/files-uploader/src/images/",
+    "IMAGES_PATH": "/Files-uploader/src/images/",
     "SERVER_API": {
         "UPLOAD": "/",
         "DELETE": "",
