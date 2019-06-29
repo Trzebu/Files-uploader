@@ -1,0 +1,230 @@
+#fu-container {
+    max-width: 1000px;
+    min-width: 490px;
+    border-radfus: 6px;
+    background-color: #FDFDFD;
+    border: 1px dashed #CCCCCC;
+    padding: 20px;
+}
+
+.fu-buttons {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.fu-upload-button-selector {
+    width: 140px;
+    height: 32px;
+}
+
+.fu-upload-button-selector > label {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.fu-upload-button-selector > input[type="file"] {
+    display: none;
+}
+
+#fuManualUploadTrigger {
+    width: 140px;
+    height: 32px;
+    background: #00ca06;
+    color: #fff;
+    border-radfus: 2px;
+    border: 1px solid #2dadc2;
+    margin-left: 5px;
+    display: none;
+}
+
+#fuManualUploadTrigger:hover {
+    cursor: pointer;
+}
+
+.ico {
+    width: 16px;
+    height: 16px;
+}
+
+.images-folder-i:after {
+    content: url("../images/folder-images.png");
+}
+
+.upload-i:after {
+    content: url("../images/upload.png");
+}
+
+#fuFilesList {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+#fuFilesList > li {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.fu-thumbnail-selector {
+    width: 15%;
+    padding: 3px;
+}
+
+.fu-file-name-selector {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fu-file-name-selector > span {
+    width: 100%;
+    height: 18px;
+}
+
+.fu-file-manage-selector {
+    width: 25%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.fu-icon {
+    width: 32px!important;
+    height: 32px!important;
+}
+
+.fu-in-progress {
+    background-color: #d9d9d9;
+    border-bottom: 2px solid #b3b3b3;
+}
+
+.fu-success {
+    background-color: #b3ffb3;
+    border-bottom: 2px solid #66ff66;
+}
+
+.fu-error {
+    background-color: #ffb3b3;
+    border-bottom: 2px solid #ff6666;
+}
+
+.fu-thumbnail-selector > img {
+    width: 100%;
+    max-height: 100px;
+}
+
+#fu-upload-progressbar {
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+}
+
+#fu-upload-progressbar > div {
+    width: 100%;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: relative;
+}
+
+#fu-upload-progressbar > div > span {
+    z-index: 1;
+    position: absolute;
+    color: black;
+    width: 100%;
+    text-align: center;
+    margin-top: -2px;
+}
+
+#fu-upload-progress {
+    height: 100%;
+    width: 0%;
+    background-color: #9999ff;
+    border-radius: 7px;
+    z-index: 0;
+    position: absolute;
+}
+
+.fu-info-error {
+    color: red;
+    height: auto!important;
+}
+
+.fu-info-success {
+    color: green;
+    height: auto!important;
+}
+
+.fu-controll-buttons-delete-edit {
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+}
+
+.fu-file-manage-selector > div > button {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.37) inset, 1px 0 1px rgba(255, 255, 255, 0.07) inset, 0 1px 0 rgba(0, 0, 0, 0.36), 0 -2px 12px rgba(0, 0, 0, 0.08) inset;
+    padding: 3px 4px;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    color: inherit;
+    background-color: #FFFFFF;
+    background-color: #e65c47;
+    color: #FAFAFA;
+    border-color: #dc523d;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.55);
+}
+
+.fu-file-manage-selector > div > button:hover {
+    cursor: pointer;
+}
+
+.fu-button-cancel {
+    background-color: #e65c47;
+    color: #FAFAFA;
+    border-color: #dc523d;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.55);
+}
+
+.fu-delete-button {
+    display: none;
+}
+
+.fu-edit-button {
+    display: none;
+    background-color: blue!important;
+    border-color: darkblue!important;
+}
+
+.fu-edit-name-container {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fu-edit-name-container > input {
+    width: 100%;
+}
+
+.fu-button-edit-name-save {
+    background-color: green!important;
+    border-color: darkgreen!important;
+}
+
+.fu-status {
+    height: auto!important;
+}
