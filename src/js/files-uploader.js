@@ -469,9 +469,9 @@ var File = function (fileData, id) {
                 this.selector(".fu-thumbnail-selector>img").remove();
 
                 if (typeof MIME_TO_ICON[this.fileData.type] !== "undefined") {
-                    imageElement.src = "/src/images/" + MIME_TO_ICON[this.fileData.type];
+                    imageElement.src = FU_CONFIG["IMAGES_PATH"] + MIME_TO_ICON[this.fileData.type];
                 } else {
-                    imageElement.src = "/src/images/file.png";
+                    imageElement.src = FU_CONFIG["IMAGES_PATH"] + "file.png";
                 }
 
                 this.selector(".fu-thumbnail-selector").appendChild(imageElement);
