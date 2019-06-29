@@ -332,21 +332,6 @@ var File = function (fileData, id) {
     this.newFileName = undefined;
     this.status = 0;
 
-    /**
-    * Status codes:
-    * 0 - preparing to upload
-    * 1 - prepared to upload
-    * 2 - Error in validation
-    * 3 - Uploading
-    * 4 - Server error while upload
-    * 5 - Error in server side validation
-    * 6 - Uploaded
-    * 7 - Removed
-    * 8 - Uploader error.
-    * 9 - Edited.
-    * 10 - Uploaded, waiting to upload other
-    */
-
     this.ajax = function (method, url, data) {
         return new Promise(function (resolve, reject) {
             var request = new XMLHttpRequest();
@@ -469,9 +454,9 @@ var File = function (fileData, id) {
                 this.selector(".fu-thumbnail-selector>img").remove();
 
                 if (typeof MIME_TO_ICON[this.fileData.type] !== "undefined") {
-                    imageElement.src = "/src/images/" + MIME_TO_ICON[this.fileData.type];
+                    imageElement.src = FU_CONFIG["IMAGES_PATH"] + MIME_TO_ICON[this.fileData.type];
                 } else {
-                    imageElement.src = "/src/images/file.png";
+                    imageElement.src = FU_CONFIG["IMAGES_PATH"] + "file.png";
                 }
 
                 this.selector(".fu-thumbnail-selector").appendChild(imageElement);
