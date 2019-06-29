@@ -10,12 +10,12 @@ var FU_CONFIG = {
     "IMAGE_MIN_WIDTH": 0,
     "IMAGE_MAX_HEIGHT": 0,
     "IMAGE_MIN_HEIGHT": 0,
-    "IMAGES_PATH": "/src/images/",
+    "IMAGES_PATH": "/files-uploader/src/images/",
     "SERVER_API": {
-        "UPLOAD": "/server_examples/php/file_manager_extended.php?action=upload",
-        "DELETE": "/server_examples/php/file_manager_extended.php?action=delete",
-        "EDIT": "/server_examples/php/file_manager_extended.php?action=edit",
-        "PREVIEW": "/server_examples/php/uploaded/"
+        "UPLOAD": "/",
+        "DELETE": "",
+        "EDIT": "",
+        "PREVIEW": ""
     }
 };
 
