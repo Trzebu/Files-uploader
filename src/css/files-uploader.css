@@ -3,8 +3,17 @@
     min-width: 490px;
     border-radfus: 6px;
     background-color: #FDFDFD;
-    border: 1px dashed #CCCCCC;
+    border: 2px dashed #CCCCCC;
+    border-radius: 20px;
     padding: 20px;
+}
+
+.fu-drop-text {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: rgba(155, 155, 155, 0.7);
 }
 
 .fu-buttons {
@@ -227,4 +236,18 @@
 
 .fu-status {
     height: auto!important;
+}
+
+.fu-height-limiter {
+    max-height: 300px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.fu-highlight {
+    border-color: purple!important;
+}
+
+.fu-progress-success {
+    background-color: #b3ffb3!important;
 }
