@@ -13,9 +13,9 @@ var FU_CONFIG = {
     "IMAGES_PATH": "/Files-uploader/src/images/",
     "SERVER_API": {
         "UPLOAD": "/",
-        "DELETE": "",
-        "EDIT": "",
-        "PREVIEW": ""
+        "DELETE": "/",
+        "EDIT": "/",
+        "PREVIEW": "/"
     }
 };
 
@@ -61,6 +61,7 @@ var FU_TEMPLATES = {
 
 var FileUploader = function () {
     this.fileInput = document.getElementById("fuFiles");
+    this.dropArea = document.getElementById("fu-container");
     this.preparedFiles = [];
 
     if (FU_CONFIG["MANUAL_UPLOAD_TRIGGER"]) {
@@ -77,11 +78,36 @@ var FileUploader = function () {
             return;
         }
 
-        this.loadFiles();
+        this.loadFiles(this.fileInput.files);
     }.bind(this);
 
-    this.loadFiles = function () {
-        var files = this.fileInput.files;
+    this.dropArea.addEventListener("dragenter", function () {
+        this.dropArea.classList.add("fu-highlight");
+    }.bind(this));
+
+    this.dropArea.addEventListener("dragover", function (event) {
+        this.dropArea.classList.add("fu-highlight");
+        event.preventDefault()
+        event.stopPropagation()
+    }.bind(this));
+
+    this.dropArea.addEventListener("dragleave", function () {
+        this.dropArea.classList.remove("fu-highlight");
+    }.bind(this));
+
+    this.dropArea.addEventListener("drop", function (event) {
+        this.dropArea.classList.remove("fu-highlight");
+        event.preventDefault()
+        event.stopPropagation()
+        var files = event.dataTransfer.files;
+        
+        if (files.length > 0) {
+            this.loadFiles(files);
+        }
+
+    }.bind(this), false);
+
+    this.loadFiles = function (files) {
         var totalFilesSize = 0;
 
         for (var i = 0; i < files.length; i++) {
@@ -114,6 +140,7 @@ var FileUploader = function () {
 
     this.update = function () {
         var filesWaitingToOther = 0;
+        var progressElement = document.getElementById("fu-upload-progress");
 
         for (var i in this.preparedFiles) {
             var file = this.preparedFiles[i];
@@ -128,8 +155,12 @@ var FileUploader = function () {
             for (var i in this.preparedFiles) {
                 this.preparedFiles[i].status = 6;
             }
-
+            progressElement.classList.add("fu-progress-success");
             return;
+        }
+
+        if (progressElement.classList.contains("fu-progress-success")) {
+            progressElement.classList.remove("fu-progress-success");
         }
 
         this.updateUploadProgressbar();
@@ -380,8 +411,8 @@ var File = function (fileData, id) {
             if (this.status === 3) {
                 this.abortUploadingRequest();
                 this.remove();
-            } else if (this.status === 1) {
-                this.remove()
+            } else {
+                this.remove();
             }
         }.bind(this));
     }
